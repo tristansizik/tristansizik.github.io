@@ -1,4 +1,4 @@
-/*var myHeading = document.querySelector('h1');
+var myHeading = document.querySelector('h1');
 myHeading.textContent = 'Hello world!';
 
 var today = new Date();
@@ -15,4 +15,3 @@ if(hourNow > 18){
     greeting = 'Welcome';
 }
 document.write(greeting);
-*/
