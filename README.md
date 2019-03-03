@@ -1,4 +1,4 @@
-# mastless.github.io
+# MASTLESS PHOTOGRAPHY - A Web Dev Exploration
 
 Hello All! Welcome to my Personal Front End Web Dev Site. I will be utilizing Github Pages in order to create the outline of my Photography Website under my business name, Mastless Photography. 
 
