@@ -1,6 +1,3 @@
-var myHeading = document.querySelector('h1');
-myHeading.textContent = 'Hello world!';
-
 var today = new Date();
 var hourNow = today.getHours();
 var greeting;

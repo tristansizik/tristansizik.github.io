@@ -30,6 +30,21 @@ p{
     padding: 10px 0px;
 
 }
+.container{
+    width:538px;
+}
+section,
+aside{
+    margin:10px;
+}
+section {
+    float: left;
+    width: 340px;
+}
+aside{
+    float: right;
+    width: 158px;
+}
 #artTable{
     word-spacing: 3px;
 }
