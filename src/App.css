@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  flex-grow: 1;
 }
 
 .logo {
@@ -42,6 +43,21 @@
   color: #888;
 }
 
+.read-the-docs:hover {
+  transition: color 1s;
+  color: aqua;
+}
+
+.navdiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .newP {
   transition: color 1s;
   color: #2bb582;
@@ -55,11 +71,6 @@
 .newP3 {
   transition: color 1s;
   color: #c2a72d;
-}
-
-.read-the-docs:hover {
-  transition: color 1s;
-  color: aqua;
 }
 
 header {
