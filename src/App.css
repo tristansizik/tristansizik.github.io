@@ -38,5 +38,34 @@
 }
 
 .read-the-docs {
+  transition: color 1s;
   color: #888;
+}
+
+.newP {
+  transition: color 1s;
+  color: #2bb582;
+}
+
+.newP2 {
+  transition: color 1s;
+  color: #b52ba7;
+}
+
+.newP3 {
+  transition: color 1s;
+  color: #c2a72d;
+}
+
+.read-the-docs:hover {
+  transition: color 1s;
+  color: aqua;
+}
+
+header {
+  background-color: red;
+}
+
+footer {
+  background-color : brown;
 }
