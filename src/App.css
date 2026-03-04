@@ -19,6 +19,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.navdiv > * > button:hover  {
+  border-color: chartreuse;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -74,7 +78,7 @@
 }
 
 header {
-  background-color: red;
+  background-color: #fdbb4a;
 }
 
 footer {

@@ -13,6 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  
+}
+
 a {
   font-weight: 500;
   color: #646cff;

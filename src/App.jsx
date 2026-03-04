@@ -1,46 +1,58 @@
 import { useState } from 'react'
 import './App.css';
 import Home from './Home.jsx';
-import MyBlogPage from './MyBlogPage.jsx';
+import Blog from './Blog.jsx';
+import AboutMe from './AboutMe.jsx';
+import { SocialIcon } from 'react-social-icons'
+
+
+const Pages = Object.freeze({
+  HOME: Symbol("home"),
+  ABOUTME: Symbol("aboutme"),
+  BLOG: Symbol("blog"),
+});
+
+
 
 function App() {
-  const [homeBool, setHomeBool] = useState(false);
-
+  const [homeBool, setHomeBool] = useState(Pages.HOME);
+  
   function handleHomeClick() {
-    
-    if(homeBool === false) {
-      setHomeBool(true);
-      console.log("entered false if condition");
-    } else if (homeBool === true){
-      setHomeBool(false);
-      console.log("entered true if condition");
-    }
-    
+      setHomeBool(Pages.HOME);
+      console.log("Entered Home function");
+  }
+  function handleAboutMeClick() {
+      setHomeBool(Pages.ABOUTME);
+      console.log("Entered About Me function");
+  }
+  function handleBlogClick() {
+      setHomeBool(Pages.BLOG);
+      console.log("Entered Blog case");
   }
 
   return (
     <>
       <header>
-        <h1>I'm a Header Header Header</h1>
         <div className="navdiv">
-          <nav className="navbar">
-            <button onClick={handleHomeClick}>Home</button>
-            <button onClick={handleHomeClick}>About Me</button>
-            <button>Blog</button>
-          </nav>
           <div className="">
             <button>Blog</button>
           </div>
+          <nav className="navbar">
+            <button onClick={handleHomeClick}>Home</button>
+            <button onClick={handleAboutMeClick}>About Me</button>
+            <button onClick={handleBlogClick}>Blog</button>
+          </nav>
         </div>
       </header>
 
-      {homeBool && <Home />}
-      {!homeBool && <MyBlogPage/>}
-
+      { (homeBool === Pages.HOME)  && (<Home />) }
+      { (homeBool === Pages.ABOUTME)  && (<AboutMe />)}
+      { (homeBool === Pages.BLOG)  && (<Blog />) }
+      
       <footer>
-        <h1>
-          I'm a footer
-        </h1>
+        <SocialIcon url="https://www.instagram.com/treee.stone/" bgColor='black'/>
+        <SocialIcon url="https://pinterest.com/treeestone" bgColor='black'/>
+        <SocialIcon url="https://substack.com/@morecoffeee" bgColor='black'/>
       </footer>
     </>
   )
