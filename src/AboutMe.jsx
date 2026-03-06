@@ -1,45 +1,21 @@
 import './App.css';
 import jsonData from '../playlistexample.json';
+import { useState } from 'react'
 
-// var srcUrl = `${jsonData.external_urls.spotify}`;
+var srcUrl = `${jsonData.external_urls.spotify}`;
 
-// var addEmbed = srcUrl.slice(0, srcUrl.indexOf("/playlist")) + "/embed" + srcUrl.slice(srcUrl.indexOf("/playlist"), srcUrl.length);
-
-
-// https://open.spotify.com/embed/playlist/6x5vz9JnYBZi4p6vL22ljh?utm_source=generator
-// https://open.spotify.com/embed/playlist/42ANCvPObJwPIm8TGwHjNI?utm_source=generator
-
-var embedVar = <iframe data-testid="embed-iframe" 
-      style={{borderRadius: '12px'}} 
-      // src={addEmbed}
-      src="https://open.spotify.com/embed/playlist/6x5vz9JnYBZi4p6vL22ljh?utm_source=generator"
-      width="100%" 
-      height="352" 
-      frameBorder="0" 
-      allowFullScreen="" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy"></iframe>;
+var addEmbed = srcUrl.slice(0, srcUrl.indexOf("/playlist")) + "/embed" + srcUrl.slice(srcUrl.indexOf("/playlist"), srcUrl.length);
 
 function AboutMe() {
-  // const [url, setUrl] = useState("https://open.spotify.com/embed/playlist/6x5vz9JnYBZi4p6vL22ljh?utm_source=generator");
+  const [url, setUrl] = useState(addEmbed);
 
-  // function handleClick() {
-  //   srcUrl = `${jsonData.external_urls.spotify2}`;
-  //   setUrl("https://open.spotify.com/embed/playlist/42ANCvPObJwPIm8TGwHjNI?utm_source=generator");
-  // // {console.log(addEmbed)}
-  // //   embedVar = <iframe data-testid="embed-iframe" 
-  // //     style={{borderRadius: '12px'}} 
-  // //     src="https://open.spotify.com/embed/playlist/42ANCvPObJwPIm8TGwHjNI?utm_source=generator"
-  // //     width="100%" 
-  // //     height="352" 
-  // //     frameBorder="0" 
-  // //     allowFullScreen="" 
-  // //     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-  // //     // loading="lazy"
-  // //     >
+  function handleClick() {
+    srcUrl = `${jsonData.external_urls.spotify2}`;
+    addEmbed = srcUrl.slice(0, srcUrl.indexOf("/playlist")) + "/embed" + srcUrl.slice(srcUrl.indexOf("/playlist"), srcUrl.length);
 
-  //     // </iframe>;
-  // }
+    setUrl(addEmbed);
+    {console.log(url)}
+  }
 
   return (
     <>
@@ -56,8 +32,7 @@ function AboutMe() {
           music! 
           </p>
         </div>
-        {embedVar}
-      {/* <iframe data-testid="embed-iframe" 
+      <iframe data-testid="embed-iframe" 
       style={{borderRadius: '12px'}} 
       key={url}
       src={url}
@@ -66,13 +41,11 @@ function AboutMe() {
       frameBorder="0" 
       allowFullScreen="" 
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy"></iframe> */}
+      loading="lazy"></iframe>
       </div>
-      {/* <button onClick={handleClick}>
+      <button onClick={handleClick}>
         Change Playlist
-      </button> */}
-      {/* {console.log(jsonData.external_urls.spotify)} */}
-      {/* {console.log(addEmbed)} */}
+      </button>
     </>
       
   )
