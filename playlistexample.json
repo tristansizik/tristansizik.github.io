@@ -1,0 +1,47 @@
+{
+    "collaborative": false,
+    "description": "",
+    "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/6x5vz9JnYBZi4p6vL22ljh",
+        "spotify2": "https://open.spotify.com/playlist/42ANCvPObJwPIm8TGwHjNI?si=pyqjnBPmSe2c5DDwFnZK3w"
+    },
+    "followers": {
+        "href": null,
+        "total": 0
+    },
+    "href": "https://api.spotify.com/v1/playlists/6x5vz9JnYBZi4p6vL22ljh",
+    "id": "6x5vz9JnYBZi4p6vL22ljh",
+    "images": [
+        {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d00001e029c57fd7b527da957ba509f84ab67616d00001e029dafb918caa75130963d7f4cab67616d00001e02ac2f4cd4eecbfc05edb6d9f8ab67616d00001e02eec05a19db1f69581760fb88",
+            "width": 640
+        },
+        {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d00001e029c57fd7b527da957ba509f84ab67616d00001e029dafb918caa75130963d7f4cab67616d00001e02ac2f4cd4eecbfc05edb6d9f8ab67616d00001e02eec05a19db1f69581760fb88",
+            "width": 300
+        },
+        {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d00001e029c57fd7b527da957ba509f84ab67616d00001e029dafb918caa75130963d7f4cab67616d00001e02ac2f4cd4eecbfc05edb6d9f8ab67616d00001e02eec05a19db1f69581760fb88",
+            "width": 60
+        }
+    ],
+    "name": "Solace | Pick Me Up 03",
+    "owner": {
+        "display_name": "mastless",
+        "external_urls": {
+            "spotify": "https://open.spotify.com/user/mastless_"
+        },
+        "href": "https://api.spotify.com/v1/users/mastless_",
+        "id": "mastless_",
+        "type": "user",
+        "uri": "spotify:user:mastless_"
+    },
+    "primary_color": null,
+    "public": true,
+    "snapshot_id": "AAAAbnyZI9YANMkjjBT4NscMIXa6M9ED",
+    "type": "playlist",
+    "uri": "spotify:playlist:6x5vz9JnYBZi4p6vL22ljh"
+}

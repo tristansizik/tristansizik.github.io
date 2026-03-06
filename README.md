@@ -1,6 +1,14 @@
 <<<<<<< HEAD
 # ReactPractice
 This Git Repository is me fooling around with React to learn how to dynamically generate web apps! Current challenge is to use one page and make it feel like there's multiple, but it's react that's controlling what DOM elements are showing.
+
+# Documentation
+Spotify for Developers 
+
+https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app
+https://developer.spotify.com/dashboard/9b5356f0c64141f685a85ad3aa78936e
+
+
 =======
 # React + Vite
 

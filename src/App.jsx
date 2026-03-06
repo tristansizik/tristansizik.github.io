@@ -50,9 +50,11 @@ function App() {
       { (homeBool === Pages.BLOG)  && (<Blog />) }
       
       <footer>
-        <SocialIcon url="https://www.instagram.com/treee.stone/" bgColor='black'/>
-        <SocialIcon url="https://pinterest.com/treeestone" bgColor='black'/>
-        <SocialIcon url="https://substack.com/@morecoffeee" bgColor='black'/>
+        <div>
+          <SocialIcon url="https://www.instagram.com/treee.stone/" bgColor='black'/>
+          <SocialIcon url="https://pinterest.com/treeestone" bgColor='black'/>
+          <SocialIcon url="https://substack.com/@morecoffeee" bgColor='black'/>
+        </div>
       </footer>
     </>
   )

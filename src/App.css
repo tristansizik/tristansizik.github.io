@@ -83,4 +83,11 @@ header {
 
 footer {
   background-color : brown;
+  display: flex;
+}
+
+footer > * {
+  flex: 1;
+  /* padding: 1em; */
+  /* color: white; */
 }
