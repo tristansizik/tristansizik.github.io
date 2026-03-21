@@ -1,21 +1,65 @@
 import './App.css';
 import jsonData from '../playlistexample.json';
-import { useState } from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 var srcUrl = `${jsonData.external_urls.spotify}`;
 
 var addEmbed = srcUrl.slice(0, srcUrl.indexOf("/playlist")) + "/embed" + srcUrl.slice(srcUrl.indexOf("/playlist"), srcUrl.length);
 
+var urlArray = [];
+
 function AboutMe() {
   const [url, setUrl] = useState(addEmbed);
+  const [urlIndex, setURLIndex] = useState(0);
 
-  function handleClick() {
-    srcUrl = `${jsonData.external_urls.spotify2}`;
-    addEmbed = srcUrl.slice(0, srcUrl.indexOf("/playlist")) + "/embed" + srcUrl.slice(srcUrl.indexOf("/playlist"), srcUrl.length);
+  useEffect(() => {
+    populateUrlArray();
+  }, []); // The empty array ensures this effect runs only once on mount
+
+
+  function nextClick() {
+    if( urlIndex == urlArray.length - 1) {
+      setURLIndex(0);
+    } else {
+      setURLIndex(urlIndex + 1);
+    }
+
+    srcUrl = urlArray[urlIndex];
+    addEmbed = formatURL(srcUrl);
 
     setUrl(addEmbed);
     {console.log(url)}
   }
+
+  function backClick() {
+
+    if( urlIndex == 0) {
+      setURLIndex(urlArray.length - 1);
+    } else {
+      setURLIndex(urlIndex - 1);
+    }
+    srcUrl = urlArray[urlIndex];
+    addEmbed = formatURL(srcUrl);
+
+    setUrl(addEmbed);
+    {console.log(url)}
+  }
+
+  function formatURL(url) {
+    console.log("Formatting URL:", url);
+    return url.slice(0, url.indexOf("/playlist")) + "/embed" + url.slice(url.indexOf("/playlist"), url.length);
+  }
+
+  function populateUrlArray() {
+    console.log("Entered populateUrlArray function");
+
+  Object.keys(jsonData.external_urls).forEach(key => {
+    console.log(`Key: ${key}, Value: ${jsonData.external_urls[key]}`);
+    urlArray.push(jsonData.external_urls[key])
+  });
+  
+}
 
   return (
     <>
@@ -38,9 +82,13 @@ function AboutMe() {
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy"></iframe>
       </div>
-      <button onClick={handleClick}>
-        Change Playlist
+      <button onClick={nextClick}>
+        Next Playlist
       </button>
+      <button onClick={backClick}>
+        Previous Playlist
+      </button>
+      
     </>
   )
 }
