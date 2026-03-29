@@ -7,6 +7,10 @@ Spotify for Developers
 
 https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app
 https://developer.spotify.com/dashboard/9b5356f0c64141f685a85ad3aa78936e
+https://curlconverter.com/javascript/
+
+#!! Need to do this for keeping access code secret
+https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow
 
 
 =======
