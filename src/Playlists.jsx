@@ -206,8 +206,12 @@ window.location.href = authUrl.toString();
   function populateArray(jsonData) {
 
     jsonData.items.forEach(item => {
+      console.log(item.name);
+      if(item.name.includes("TM")) {
+        urlArray.push(item.external_urls.spotify);
+      }
       // playlistURLArray.push(item.external_urls.spotify);
-      urlArray.push(item.external_urls.spotify);
+      // urlArray.push(item.external_urls.spotify);
     });
     console.log(urlArray[3]);
   }
