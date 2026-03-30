@@ -199,7 +199,17 @@ window.location.href = authUrl.toString();
       }
       const data = await response.json();
       console.log(data);
+      populateArray(data);
+  }
 
+  var playlistURLArray =[];
+  function populateArray(jsonData) {
+
+    jsonData.items.forEach(item => {
+      // playlistURLArray.push(item.external_urls.spotify);
+      urlArray.push(item.external_urls.spotify);
+    });
+    console.log(urlArray[3]);
   }
   
 
