@@ -152,17 +152,19 @@ const params =  {
 
 authUrl.search = new URLSearchParams(params).toString();
 window.location.href = authUrl.toString();
+  }
 
-const urlParams = new URLSearchParams(window.location.search);
-let code = urlParams.get('code');
+  async function curlRequestAccessToken() {
+    console.log("I'm in curlRequestAccessToken");
+    const urlParams = new URLSearchParams(window.location.search);
+    let code = urlParams.get('code');
+    // stored in the previous step
+    const codeVerifier = localStorage.getItem('code_verifier');
+    const redirectUri = 'http://127.0.0.1:5173';
+    const clientId = '9b5356f0c64141f685a85ad3aa78936e';
 
-const getToken = async code => {
-
-  // stored in the previous step
-  const codeVerifier = localStorage.getItem('code_verifier');
-
-  const url = "https://accounts.spotify.com/api/token";
-  const payload = {
+    const url = "https://accounts.spotify.com/api/token";
+    const payload = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -174,32 +176,14 @@ const getToken = async code => {
       redirect_uri: redirectUri,
       code_verifier: codeVerifier,
     }),
+    }
+
+    const body = await fetch(url, payload);
+    const response = await body.json();
+
+    localStorage.setItem('access_token', response.access_token);
   }
 
-  const body = await fetch(url, payload);
-  const response = await body.json();
-
-  localStorage.setItem('access_token', response.access_token);
-}
-  }
-
-  // async function curlGetPlaylists(access_token) {
-  //   console.log("I'm in curlGetPlaylists");
-  //   console.log(`Access Token: ${access_token}`);
-
-  //   const response = await fetch('https://api.spotify.com/v1/me/playlists', {
-  //     headers: {
-  //     'Authorization': `Bearer  ${access_token}`
-  //     }
-  //   });
-
-  //   if (!response.ok) {
-  //       throw new Error(`HTTP error! status: ${response.status}`);
-  //     }
-  //     const data = await response.json();
-  //     console.log(data);
-
-  // }
   async function curlGetPlaylists() {
     console.log("I'm in curlGetPlaylists");
     console.log(`Access Token: ${localStorage.getItem("access_token")}`);
@@ -275,8 +259,11 @@ const getToken = async code => {
       <button onClick={backClick}>
         Previous Playlist
       </button>
+      <button onClick={curlRequestAccessToken}>
+        Get Access Token
+      </button>
       <button onClick={curlGetPlaylists}>
-        Temp Button To Test Curl
+        GetPlaylists
       </button>
       <button onClick={curlAuthorizeUser}>
         Authorize user button?
