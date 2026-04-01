@@ -87,7 +87,7 @@ function AboutMe() {
 
     const clientId = '9b5356f0c64141f685a85ad3aa78936e';
     // const redirectUri = 'http://127.0.0.1:5173';
-    const redirectUri = 'http://tristansizik.github.io/';
+    const redirectUri = 'http://tristansizik.github.io';
 
     const scope = 'playlist-read-private';
     const authUrl = new URL("https://accounts.spotify.com/authorize")
@@ -117,7 +117,7 @@ function AboutMe() {
     let code = urlParams.get('code');
     // stored in the previous step
     const codeVerifier = localStorage.getItem('code_verifier');
-    const redirectUri = 'http://tristansizik.github.io/';
+    const redirectUri = 'http://tristansizik.github.io';
     const clientId = '9b5356f0c64141f685a85ad3aa78936e';
 
     const url = "https://accounts.spotify.com/api/token";
